@@ -9,7 +9,7 @@
 	
 	# commiting
 	cm = "!cm() { git commit -m \"$1\"; }; cm"
-	ca = commit --amend --no-edit
+	ca = commit --amend --no-edit -m
 
 	# branching
 	ch = "!ch() { git checkout $1; }; ch"
