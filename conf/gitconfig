@@ -2,4 +2,17 @@
 	email = ...
 	name = ...
 [alias]
+	# staging
+	st = "!git status -s | cat -n"
+	s = "!stage() { git add `git st | sed -n $1p | awk -F' ' '{ print $2 }'`; git st; }; stage"
+	u = "!unstage() { git reset HEAD `git st | sed -n $1p | awk -F' ' '{ print $2 }'`; git st; }; unstage"
+	
+	# commiting
+	cm = "!cm() { git commit -m \"$1\"; }; cm"
+	ca = commit --amend --no-edit
+
+	# branching
+	ch = "!ch() { git checkout $1; }; ch"
+	
+	# listing
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
