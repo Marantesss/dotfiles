@@ -1,3 +1,5 @@
+# ...
+
 # get current branch in git repo
 function parse_git_branch() {
 	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
@@ -55,7 +57,6 @@ export PS1="\[\e[37m\][\[\e[m\]\[\e[36m\]\u\[\e[m\]\[\e[36m\]@\[\e[m\]\[\e[36m\]
 alias gs='git status'
 alias gc='git commit -m'
 alias ga='git add -p'
-alias gch='git checkout'
 alias gfp='git fetch --prune'
 
 # misc
