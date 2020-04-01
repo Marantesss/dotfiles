@@ -1,0 +1,62 @@
+# ...
+
+#### pimp commands
+# ls with lsd
+command -v lsd &> /dev/null && alias ls='lsd --group-dirs first'
+# ytop
+export PATH=$PATH:/home/marantesss/.cargo/bin
+
+### alias
+# misc
+alias spinlock='ssh root@spinlock.fe.up.pt'
+alias dualmonitor='xrandr --output eDP-1 --auto --output DP-1 --auto --panning 3840x2160+3840+0 --scale 2x2 --right-of eDP-1'
+
+# git
+alias gs='git status'
+alias gc='git commit -m'
+alias ga='git add -p'
+alias gfp='git fetch --prune'
+
+# directories
+alias lbaw="cd ~/Documents/lbaw"
+alias sdis="cd ~/Documents/sdis"
+alias iart="cd ~/Documents/feup-iart"
+alias comp="cd ~/Documents/feup-comp"
+
+# keybindings
+bindkey '^[[2~' overwrite-mode
+bindkey '^[[3~' delete-char
+bindkey '^[[H' beginning-of-line
+bindkey '^[[1~' beginning-of-line
+bindkey '^[[F' end-of-line
+bindkey '^[[4~' end-of-line
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
+bindkey '^[[3;5~' kill-word
+
+# misc
+unsetopt NO_BEEP
+unsetopt NO_MATCH
+unsetopt AUTO_CD
+unsetopt BEEP
+unsetopt NOMATCH
+unsetopt NOTIFY
+unsetopt INC_APPEND_HISTORY
+unsetopt SHARE_HISTORY
+unsetopt HIST_EXPIRE_DUPS_FIRST
+unsetopt HIST_IGNORE_DUPS
+unsetopt HIST_IGNORE_ALL_DUPS
+unsetopt HIST_FIND_NO_DUPS
+unsetopt HIST_SAVE_NO_DUPS
+unsetopt HIST_REDUCE_BLANKS
+unsetopt HIST_VERIFY
+unsetopt HIST_BEEP
+unsetopt INTERACTIVE_COMMENTS
+unsetopt MAGIC_EQUAL_SUBST
+
+autoload compinit && compinit
+
+# Load Powerlevel
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
