@@ -13,15 +13,8 @@ alias dualmonitor='xrandr --output eDP-1 --auto --output DP-1 --auto --panning 3
 
 # git
 alias gs='git status'
-alias gc='git commit -m'
 alias ga='git add -p'
 alias gfp='git fetch --prune'
-
-# directories
-alias lbaw="cd ~/Documents/lbaw"
-alias sdis="cd ~/Documents/sdis"
-alias iart="cd ~/Documents/feup-iart"
-alias comp="cd ~/Documents/feup-comp"
 
 # keybindings
 bindkey '^[[2~' overwrite-mode
