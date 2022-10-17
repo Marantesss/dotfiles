@@ -1,20 +1,27 @@
 # ...
 
+# Example aliases
+alias zshconfig="code ~/.zshrc"
+alias ohmyzsh="code ~/.oh-my-zsh"
+
 #### pimp commands
 # ls with lsd
-command -v lsd &> /dev/null && alias ls='lsd --group-dirs first'
-# ytop
-export PATH=$PATH:/home/marantesss/.cargo/bin
-
-### alias
-# misc
-alias spinlock='ssh root@spinlock.fe.up.pt'
-alias dualmonitor='xrandr --output eDP-1 --auto --output DP-1 --auto --panning 3840x2160+3840+0 --scale 2x2 --right-of eDP-1'
+command -v lsd &> /dev/null \
+  && alias ls='lsd --group-dirs first' \
+  && alias tree='lsd --tree'
 
 # git
 alias gs='git status'
-alias ga='git add -p'
+alias ga='git add --patch'
 alias gfp='git fetch --prune'
+
+alias gcdev='git checkout develop'
+alias gcmaster='git checkout master'
+
+# work related
+alias wcc='cd ~/Code/web-core-client'
+alias wca='cd ~/Code/web-core-api'
+alias wcl='cd ~/Code/web-core-legacy'
 
 # keybindings
 bindkey '^[[2~' overwrite-mode
@@ -49,7 +56,11 @@ unsetopt MAGIC_EQUAL_SUBST
 
 autoload compinit && compinit
 
-# Load Powerlevel
-source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+eval "$(direnv hook zsh)"
+export INFRASTELLER=/home/marantesss/Code/infrasteller
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
