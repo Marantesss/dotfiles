@@ -3,6 +3,7 @@
 # Example aliases
 alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
+alias work="tmux attach -t infraspeak || tmuxp load .tmuxp/infraspeak.yaml"
 
 #### pimp commands
 # ls with lsd
